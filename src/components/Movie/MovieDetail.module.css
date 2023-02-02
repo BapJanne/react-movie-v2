@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.movieDetail {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  background-color: #394b61;
+  border-radius: 15px;
+  padding: 20px;
+  color: #d4d7dd;
+  font-family: "Roboto", sans-serif;
+  max-width: 1400px;
+}
+
+p {
+  margin: 10px 0px;
+}
+
+.progressBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cross {
+  position: relative;
+  left: 95%;
+  top: -5%;
+  width: 25px;
+  height: 50px;
+}
+
+.cross2 {
+  display: none;
+}
+
+.moviePoster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moviePoster img {
+  max-width: 350px;
+  border-radius: 15px;
+}
+
+.movieInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 20px 20px 50px;
+}
+
+@media screen and (max-width: 1200px) {
+  .movieDetail {
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+  }
+  .movieInfos {
+    width: 80%;
+    margin: auto;
+  }
+  .cross {
+    display: none;
+  }
+
+  .cross2 {
+    display: block;
+    float: right;
+    width: 25px;
+    height: 30px;
+  }
+
+  .crossContainer {
+    float: right;
+  }
+
+  .moviePoster img {
+    width: 80%;
+    border-radius: 15px;
+  }
+}

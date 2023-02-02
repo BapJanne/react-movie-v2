@@ -1,0 +1,75 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 20%;
+  background-color: #1f2a3b;
+}
+
+.navigation ul {
+  padding: 0;
+  width: 100%;
+}
+
+.navigation li {
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 15px 0px 15px 15px;
+  width: 80%;
+  float: right;
+  transition: all 0.1s ease-in-out;
+  border-right: 3px solid transparent;
+}
+
+.navigation li:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 5px;
+  height: 0px;
+  background-color: #07cdeb;
+  transition: height 0.5s ease;
+}
+
+.navigation li:hover:after {
+  height: 27px;
+}
+
+.active {
+  color: #07cdeb;
+}
+
+.active::after {
+  height: 27px;
+}
+
+.cross {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .navigation {
+    z-index: 10;
+    transform: translateX(-60vw);
+    width: 50vw;
+    min-width: 150px;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .navActive {
+    transform: translateX(0vw);
+  }
+
+  .cross {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 38vw;
+    width: 40px;
+    height: 40px;
+  }
+}

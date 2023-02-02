@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import MovieList from "./components/Movie/MovieList";
+import Navigation from "./components/Navigation/Navigation";
+import Profil from "./components/Profil/Profil";
+import "./index.css";
 
-function App() {
+const App = () => {
+  const [page, setPage] = useState("search");
+  const [showNav, setShowNav] = useState(false);
+
+  const navHandler = (arg) => {
+    setPage(arg);
+  };
+
+  const openNavHandler = () => {
+    setShowNav(true);
+  };
+
+  const closeNavHandler = () => {
+    setShowNav(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation
+        onNavClick={navHandler}
+        page={page}
+        showNav={showNav}
+        onCloseClick={closeNavHandler}
+      />
+      {page === "search" ? (
+        <MovieList
+          onBurgerClick={openNavHandler}
+          onPageClick={closeNavHandler}
+          showNav={showNav}
+        />
+      ) : (
+        <Profil
+          onBurgerClick={openNavHandler}
+          onPageClick={closeNavHandler}
+          showNav={showNav}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default App;
