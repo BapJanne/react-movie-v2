@@ -106,7 +106,10 @@ const MovieList = (props) => {
             }`}
             type="text"
             id="search-input"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setIsMovieDetailOpen(false);
+            }}
             onFocus={focusHandler}
             onBlur={blurHandler}
           />
