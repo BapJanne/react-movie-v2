@@ -1,15 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .movieDetail {
-  display: flex;
   width: 80%;
   margin: auto;
   background-color: #394b61;
   border-radius: 15px;
-  padding: 20px;
   color: #d4d7dd;
   font-family: "Roboto", sans-serif;
   max-width: 1400px;
+  transition: 0.7s ease-in-out;
+  overflow: hidden;
+}
+
+.movieDetailInfo {
+  display: flex;
+  padding: 20px;
+}
+
+.closeMovieDetail {
+  max-height: 0px;
+  padding: 0px;
+}
+
+.openMovieDetail {
+  max-height: 1600px;
 }
 
 p {
@@ -55,13 +69,16 @@ p {
 
 @media screen and (max-width: 1200px) {
   .movieDetail {
+    padding: 0;
+  }
+  .movieDetailInfo {
     flex-direction: column;
     margin: auto;
-    width: 80%;
   }
   .movieInfos {
     width: 80%;
     margin: auto;
+    padding: 0;
   }
   .cross {
     display: none;

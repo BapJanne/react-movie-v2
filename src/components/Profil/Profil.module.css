@@ -31,6 +31,9 @@
   .profil {
     width: 100vw;
   }
+  .movieDetail {
+    margin-top: 7vh;
+  }
 
   .burger {
     display: block;

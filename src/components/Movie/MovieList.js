@@ -124,9 +124,11 @@ const MovieList = (props) => {
         </form>
       </div>
       <div className={classes.movieDetail}>
-        {isMovieDetailOpen ? (
-          <MovieDetail movieId={movieId} onClose={closeHandler} />
-        ) : null}
+        <MovieDetail
+          movieId={movieId}
+          onClose={closeHandler}
+          isOpen={isMovieDetailOpen}
+        />
       </div>
       <div className={classes.result}>{displayData()}</div>
     </div>

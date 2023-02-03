@@ -48,9 +48,11 @@ const Profil = (props) => {
         onClick={props.onBurgerClick}
       />
       <div className={classes.movieDetail}>
-        {isMovieDetailOpen ? (
-          <MovieDetail movieId={movieId} onClose={closeHandler} />
-        ) : null}
+        <MovieDetail
+          movieId={movieId}
+          onClose={closeHandler}
+          isOpen={isMovieDetailOpen}
+        />
       </div>
       <div>
         <ul className={classes.profilContainer}>{displayMovieCard()}</ul>
